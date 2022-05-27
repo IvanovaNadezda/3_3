@@ -16,81 +16,50 @@ typedef void (Base_class::* TYPE_HANDLER)(string);
 class Base_class {
 private:
     struct o_sh {
-        TYPE_SIGNAL p_signal; //указатель на метод сигнала
-        Base_class* p_cl_base;//указатель на целевой объект
-        TYPE_HANDLER p_handler;//Указатель на метод обработчика
+        TYPE_SIGNAL p_signal;
+        Base_class* p_cl_base;
+        TYPE_HANDLER p_handler;
     };
     vector<o_sh*> connects;
-    string obj_name; //Имя объекта
-    Base_class* ptr_head_obj; //Указатель на головной объект
+    string obj_name;
+    Base_class* ptr_head_obj;
     int condition;
-    vector <Base_class*> child_objs;// Массив указателей на дочерние объекты
+    vector <Base_class*> child_objs;
 public:
     int class_number = 0;
     Base_class(Base_class* ptr_head_obj, string obj_name);
-    //Параметрический конструктор
 
-    void set_obj_name(string name); //Установить имя объекета
+    void set_obj_name(string name);
 
-    string get_obj_name(); // Получить имя объекта
-
-
-
-    void change_head_obj(Base_class* bs_class); // Изменить указатель на головной объект
+    string get_obj_name();
 
 
 
-    Base_class* get_head_obj(); // Получить указатель на головнойобъект
-
-
-
-    void print_child_objs(int level);// Вывести на экран дочерние классы
-
-
-
-    void print_child_objsConditions(int level); // Вывести на экран дочерние классы
-
-
-
-
-    Base_class* getObjByName(string name);//Поиск объекта по имени
-
-
-
-    void add_child_obj(Base_class* child_obj); //Добавить дочерний класс в массив
-
-
-
-    unsigned int get_count_child(); // Получить кол-во дочерних классов
-
-
-
-    void set_condition(int condition); //Установить состояние и отключить все нижестоящие
-
-
-
-
-    int get_condition(); //Получение состояния объекта
-    Base_class* getObjByURL(string url); //Получение указателя на объект по заданному пути
-
-    TYPE_HANDLER getHandler();// Получение указателя на обработчик
-
-    TYPE_SIGNAL getSignal();//Получение указателя на метод сигнала
-
-
-    int get_class_number();//Получение номера класса объекта
+    void change_head_obj(Base_class* bs_class);
+    Base_class* get_head_obj();
+    void print_child_objs(int level);
+    void print_child_objsConditions(int level);
+    Base_class* getObjByName(string name);
+    void add_child_obj(Base_class* child_obj);
+    unsigned int get_count_child();
+    void set_condition(int condition);
+    int get_condition();
+    Base_class* getObjByURL(string url);
+    TYPE_HANDLER getHandler();
+    TYPE_SIGNAL getSignal();
+    int get_class_number();
     void set_connect(TYPE_SIGNAL p_signal, Base_class* p_object,
-                     TYPE_HANDLER p_ob_handler); //Добавление связи между объектами
+                     TYPE_HANDLER p_ob_handler);
 
     void delete_connect(TYPE_SIGNAL p_signal, Base_class*
-    p_object, TYPE_HANDLER p_ob_handler); //Удаление связи между объектами
+    p_object, TYPE_HANDLER p_ob_handler);
 
     void emit_signal(TYPE_SIGNAL p_signal, string&
-    s_command); //Рассылает сигналы
+    s_command);
 
-    string Get_Abs_URL();//Определить абсолютный путь до объекта
+    string Get_Abs_URL();
 
-    void SetReadyALL();//Установить состояние готовности у всех объектов
+    void SetReadyALL();
 
 
 };

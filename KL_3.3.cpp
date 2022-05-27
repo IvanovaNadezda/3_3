@@ -7,8 +7,8 @@
 #include "Application.h"
 int main()
 {
-    Application* app = new Application(); //Создаем объкт класса Application
-    app->built_tree_objs();//Строим иерархическое древо
-    app->set_tree_connects();//Обрабатываем команды пользователя
-    return app->exec(); // Выводим иерархическое древо на экран
+    Application* app = new Application();
+    app->built_tree_objs();
+    app->set_tree_connects();
+    return app->exec();
 }

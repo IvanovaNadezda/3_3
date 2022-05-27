@@ -6,13 +6,12 @@
 Element_of_tree4::Element_of_tree4(Base_class* parent, string name) :
         Base_class(parent, name) {
     this->class_number = 4;
-} // Обращение к конструктору класса Base_class
-//Метод сигнала
+}
 void Element_of_tree4::signal(string& message) {
     cout << "\nSignal from " << this->Get_Abs_URL();
     message += " (class: 4)";
 }
-//Метод обработчика
+
 void Element_of_tree4::handler(string message) {
     cout << "\nSignal to " << this->Get_Abs_URL() << " Text: " << message;
 }

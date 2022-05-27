@@ -6,13 +6,11 @@
 Element_of_tree3::Element_of_tree3(Base_class* parent, string name) :
         Base_class(parent, name) {
     this->class_number = 3;
-} // Обращение к конструктору класса Base_class
-//Метод сигнала
+}
 void Element_of_tree3::signal(string& message) {
     cout << "\nSignal from " << this->Get_Abs_URL();
     message += " (class: 3)";
 }
-//Метод обработчика
 void Element_of_tree3::handler(string message) {
     cout << "\nSignal to " << this->Get_Abs_URL() << " Text: " << message;
 }
